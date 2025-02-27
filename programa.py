@@ -21,8 +21,8 @@ agent = Agent(
 )
 
 task = Task(
-    description='Sua tarefa é executar uma análise detalhada do documento {input}',
-    expected_output='Uma análise detalhada do documento {input}.',
+    description='Sua tarefa é executar uma análise detalhada do documento {input} e trazer em tópicos o que você viu',
+    expected_output='Uma análise detalhada do documento {input} sugerindo melhorias.',
     tools=[tool],
     agent=agent
 )
