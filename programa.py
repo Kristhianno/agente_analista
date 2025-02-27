@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 tool = FileReadTool()
-llm = ChatGroq(model='llama3-70b-8192')
+llm = ChatGroq(model='groq/llama3-70b-8192')
 api_key = os.environ.get("GROQ_API_KEY")
 
 
