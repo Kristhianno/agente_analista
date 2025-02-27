@@ -5,10 +5,11 @@ from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 load_dotenv()
 
-tool = PDFSearchTool()
-llm = ChatOpenAI(model='gpt-4o-mini')
+llm = ChatOpenAI(model='openai/gpt-4o-mini')
 api_key = os.environ.get("OPENAI_API_KEY")
 
+
+tool = PDFSearchTool()
 
 agent = Agent(
     role='Analista de Documentos',
