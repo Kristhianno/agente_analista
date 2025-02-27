@@ -1,13 +1,13 @@
 import os
 from crewai import Agent, Task, Crew, Process
 from crewai_tools import FileReadTool
-from langchain_groq import ChatGroq
+from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 load_dotenv()
 
 tool = FileReadTool()
-llm = ChatGroq(model='groq/llama3-70b-8192')
-api_key = os.environ.get("GROQ_API_KEY")
+llm = ChatOpenAI(model='gpt-4o-mini')
+api_key = os.environ.get("OPENAI_API_KEY")
 
 
 agent = Agent(
@@ -35,9 +35,9 @@ crew = Crew(
 )
 
 while True:
-    arquivo = arquivo('O arquivo é : ')
-    if arquivo == 'exit':
+    input = input('O arquivo é : ')
+    if input == 'exit':
         break
-    result = crew.kickoff(inputs={"input": arquivo})
+    result = crew.kickoff(inputs={"input": input})
     
     print(result)
