@@ -9,6 +9,7 @@ load_dotenv()
 llm = ChatOpenAI(model='openai/gpt-4o-mini')
 api_key = os.environ.get("OPENAI_API_KEY")
 
+arquivo = input('Qual é o prompt : ')
 
 tool = DallETool(
     model='dall-e-3',
@@ -41,10 +42,8 @@ crew = Crew(
     process=Process.sequential
 )
 
-arquivo = input('Qual é o prompt : ')
-if arquivo == True:
-    result = crew.kickoff(inputs={"input": arquivo})
-    FileNotFoundError('por favor coloque um arquivo')
-    print(result)
+result = crew.kickoff(inputs={"input": arquivo})
+    
+print(result)
 
 
