@@ -45,13 +45,9 @@ def main():
         process=Process.sequential
     )
 
-    while True:
-        input = input('O arquivo é :  ')
-        if input == 'exit':
-            break
-        result = botao(crew.kickoff(inputs={"input": arquivo}))
+    result = botao(crew.kickoff(inputs={"input": arquivo}))
         
-        print(result)
+    print(result)
 
 
 main()
