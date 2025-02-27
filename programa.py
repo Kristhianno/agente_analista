@@ -1,11 +1,11 @@
 import os
 from crewai import Agent, Task, Crew, Process
-from crewai_tools import FileReadTool
+from crewai_tools import PDFSearchTool
 from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 load_dotenv()
 
-tool = FileReadTool()
+tool = PDFSearchTool()
 llm = ChatOpenAI(model='gpt-4o-mini')
 api_key = os.environ.get("OPENAI_API_KEY")
 
@@ -35,7 +35,7 @@ crew = Crew(
 )
 
 while True:
-    input = input('O arquivo é : ')
+    input = input('O arquivo é :  ')
     if input == 'exit':
         break
     result = crew.kickoff(inputs={"input": input})
