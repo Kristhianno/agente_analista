@@ -35,8 +35,9 @@ crew = Crew(
 )
 
 while True:
-    input = input('O arquivo é : ')
-    if input == 'exit':
+    arquivo = arquivo('O arquivo é : ')
+    if arquivo == 'exit':
         break
-    result = crew.kickoff(inputs={"input": input})
+    result = crew.kickoff(inputs={"input": arquivo})
+    
     print(result)
